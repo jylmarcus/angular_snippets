@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" #formName="ngForm">
+  <mat-form-field>
+    <mat-label for="name">Name:</mat-label>
+    <input matInput aria-label="name" type="text" id="name" required [(ngModel)] = "name" name = "name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label for="email">Email:</mat-label>
+    <input matInput aria-label="email" type="text" id="email" required [(ngModel)] = "email" name="email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label for="dropdown">Dropdown example</mat-label>
+    <mat-select name="dropdown" id="dropdown" [(ngModel)]="chosenOption">
+      <mat-option *ngFor="let option of arrayVariable" [value] = "option">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!formName.form.valid">Submit</button>
+  </mat-form-field>
+</form>
