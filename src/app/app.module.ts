@@ -9,12 +9,16 @@ import { TemplateFormComponent } from './components/template-form/template-form.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { ListDisplayComponent } from './components/list-display/list-display.component';
+import { ItemDisplayComponent } from './components/item-display/item-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ListDisplayComponent,
+    ItemDisplayComponent
   ],
   imports: [
     BrowserModule,
