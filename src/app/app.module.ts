@@ -11,6 +11,7 @@ import { MaterialModule } from './material.module';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { ListDisplayComponent } from './components/list-display/list-display.component';
 import { ItemDisplayComponent } from './components/item-display/item-display.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ItemDisplayComponent } from './components/item-display/item-display.com
     TemplateFormComponent,
     ReactiveFormComponent,
     ListDisplayComponent,
-    ItemDisplayComponent
+    ItemDisplayComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,

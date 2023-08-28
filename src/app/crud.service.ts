@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
+import { Injectable, ElementRef } from '@angular/core';
+import { Observable, catchError, firstValueFrom, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +49,17 @@ export class CrudService {
   //generic function for deleting data
   deleteData(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/deleteEndpoint/${id}`)
+  }
+
+  //generic function for uploading files with other data
+  uploadFile(description: string, elemRef: ElementRef): Promise<any> {
+    const data = new FormData()
+    data.set("description", description)
+    data.set("myfile", elemRef.nativeElement.files[0])
+
+    return firstValueFrom(
+      this.http.post<any>('/uploadEndpoint', data)
+    )
   }
 
   //generic function to handle error
