@@ -36,12 +36,14 @@ export class MultiFileUploadComponent implements OnInit{
 
   postData() {
     const value = this.form.value
-    this.crudSvc.uploadFiles(this.filesToUpload)
-      .then(resp => {
+    this.crudSvc.uploadFiles(this.filesToUpload).subscribe({
+      next: (resp) => {
         console.info('>>>> resp: ', resp)
-      })
-      .catch(error => {
+      },
+      error: (error) => {
         console.error('error: ', error)
-      })
+      }
+    }
+    )
   }
 }
