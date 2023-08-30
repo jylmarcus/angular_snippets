@@ -1,0 +1,5 @@
+<form [formGroup]="form" (submit)="postData()">
+  <label for="fileUpload">Upload a file: </label>
+  <input type="file" name="fileUpload" id="fileUpload" multiple (change)="fileAddedEvent($event.target)">
+  <button type="button">Submit</button>
+</form>

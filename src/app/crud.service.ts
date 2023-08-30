@@ -51,8 +51,24 @@ export class CrudService {
     return this.http.delete(`${this.baseURL}/deleteEndpoint/${id}`)
   }
 
+  //generic function for uploading one file
+  uploadFile(fileToUpload: File): Observable<any> {
+    const data = new FormData();
+    data.set("key", fileToUpload, fileToUpload.name);
+    return this.http.post(`${this.baseURL}/filePostEndpoint`, data)
+  }
+
+  uploadFiles(filesToUpload: File[]): Observable<any> {
+    const data = new FormData();
+    for(let i = 0; i < filesToUpload.length; i++) {
+      data.append("filesUpload", filesToUpload[i])
+    }
+    return this.http.post(`${this.baseURL}/multipleFilePostEndpoint`, data)
+    //todo: write the endpoint in spring boot and check the requestbody
+  }
+
   //generic function for uploading files with other data
-  uploadFile(description: string, elemRef: ElementRef): Promise<any> {
+  uploadFilesAndData(description: string, elemRef: ElementRef): Promise<any> {
     const data = new FormData()
     data.set("description", description)
     data.set("myfile", elemRef.nativeElement.files[0])

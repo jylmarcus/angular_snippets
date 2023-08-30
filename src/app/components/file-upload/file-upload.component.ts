@@ -25,7 +25,7 @@ export class FileUploadComponent implements OnInit{
 
   postData() {
     const value = this.form.value
-    this.crudSvc.uploadFile(value['description'], this.fileUpload)
+    this.crudSvc.uploadFilesAndData(value['description'], this.fileUpload)
       .then(resp => {
         console.info('>>>> resp: ', resp)
       })

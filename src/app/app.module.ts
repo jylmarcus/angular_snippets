@@ -12,6 +12,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 import { ListDisplayComponent } from './components/list-display/list-display.component';
 import { ItemDisplayComponent } from './components/item-display/item-display.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { MultiFileUploadComponent } from './components/multi-file-upload/multi-file-upload.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
     ReactiveFormComponent,
     ListDisplayComponent,
     ItemDisplayComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    MultiFileUploadComponent
   ],
   imports: [
     BrowserModule,
